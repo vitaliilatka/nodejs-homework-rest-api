@@ -1,6 +1,8 @@
 {
-  "name": "template",
-  "version": "0.0.0",
+  "name": "nodejs-homework-rest-api",
+  "version": "1.0.0",
+  "description": "Homework node-js",
+  "main": "index.js",
   "private": true,
   "scripts": {
     "start": "cross-env NODE_ENV=production node ./bin/server.js",
@@ -8,11 +10,23 @@
     "lint": "eslint **/*.js",
     "lint:fix": "eslint --fix **/*.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitaliilatka/nodejs-homework-rest-api"
+  },
+  "author": "vitalii latka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vitaliilatka/nodejs-homework-rest-api/issues"
+  },
+  "homepage": "https://github.com/vitaliilatka/nodejs-homework-rest-api",
   "dependencies": {
-    "cors": "2.8.5",
-    "cross-env": "7.0.3",
-    "express": "4.17.1",
-    "morgan": "1.10.0"
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "express": "^4.17.1",
+    "joi": "^17.4.0",
+    "morgan": "^1.10.0",
+    "uid": "^2.0.0"
   },
   "devDependencies": {
     "eslint": "^7.19.0",
@@ -20,6 +34,6 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
-    "nodemon": "2.0.7"
+    "nodemon": "^2.0.7"
   }
 }
