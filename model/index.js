@@ -1,15 +1,28 @@
-// const fs = require('fs/promises')
-// const contacts = require('./contacts.json')
+const Contacts = require('./schema.db');
 
-const listContacts = async () => {}
+const listContacts = () => {
+  return Contacts.find();
+};
 
-const getContactById = async (contactId) => {}
+const getContactById = (id) => {
+  return Contacts.findById({ _id: id });
+};
 
-const removeContact = async (contactId) => {}
+const removeContact = (id) => {
+  return Contacts.findByIdAndRemove({ _id: id });
+};
 
-const addContact = async (body) => {}
+const addContact = ({ name, email, phone }) => {
+  return Contacts.create({ name, email, phone });
+};
 
-const updateContact = async (contactId, body) => {}
+const updateContact = (id, body) => {
+  return Contacts.findByIdAndUpdate({ _id: id }, body, { new: true });
+};
+
+const updateStatusContact = (id, body) => {
+  return Contacts.findByIdAndUpdate({ _id: id }, body, { new: true });
+};
 
 module.exports = {
   listContacts,
@@ -17,4 +30,5 @@ module.exports = {
   removeContact,
   addContact,
   updateContact,
-}
+  updateStatusContact,
+};

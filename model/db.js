@@ -9,6 +9,7 @@ const db = mongoose.connect(uriDb, {
     useFindAndModify: false,
     poolSize: 5,
 });
+
 mongoose.connection.on('connected', (err) => {
     console.log(`Mongoose connected`);
 });
@@ -16,6 +17,7 @@ mongoose.connection.on('connected', (err) => {
 mongoose.connection.on('error', (err) => {
     console.log(`Mongoose connection error: ${err.message}`);
 });
+
 mongoose.connection.on('disconnected', (err) => {
     console.log(`Mongoose disconnected`);
 });
